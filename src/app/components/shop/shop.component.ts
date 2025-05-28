@@ -3,7 +3,7 @@ import { Product } from '../../models/product';
 import { HttpClient } from '@angular/common/http';
 import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
-
+import productsData from '../../../assets/products.json';
 @Component({
   selector: 'app-shop',
   imports: [CommonModule],
@@ -19,9 +19,7 @@ export class ShopComponent {
 
 
   ngOnInit() {
-    this.http.get<Product[]>('/assets/products.json').subscribe(data => {
-      this.products = data;
-    });
+    this.products = productsData;
   }
 
   addToCart(product: Product) {
