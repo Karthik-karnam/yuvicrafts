@@ -1,0 +1,88 @@
+
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#1b120e] tracking-light text-[32px] font-bold leading-tight min-w-72">Shop</p></div>
+            <div
+                *ngIf="addedMessage"
+                class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50"
+                >
+                {{ addedMessage }}
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4" >
+              <div class="flex flex-col gap-3 pb-3" *ngFor="let product of products">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  [style.background-image]="'url(' + product.imageUrl + ')'"
+                ></div>
+                <div>
+                  <p class="text-[#1b120e] text-base font-medium leading-normal">{{product.name}}</p>
+                  <p class="text-[#97674e] text-sm font-normal leading-normal">${{product.price}}</p>
+                </div>
+                <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[bisque] text-[#122118] gap-2 pl-4 text-sm font-bold leading-normal tracking-[0.015em]"
+                (click)="addToCart(product)"
+              >
+                <div class="text-[#122118]" data-icon="ShoppingCart" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="truncate">Add to Cart</span>
+              </button>
+              </div>
+              <!-- <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAaV96IYZkC5or-9hhnOJBoPKDe8vONDpSZBtFhXAEJqa1DYg6V3vLkrdr0o3oCN4pc5vz7rTruSrOMwoQiXlUZFZ9gBM9qv8nxuVbWfcR676lnyjw-FyO0D_V1O5E1Sy38VSSDTf854LkAKGRldYz4wUyf49hEN8goMDZVJunzujvB5HeUy0bNnf09pi4UuJcWkUESea1xKu8xfL8rE1SFx4ElOcU4dp_IdBMUA8_Ijf0s2hCzzQ3GxCtVhEkqMMIXnXh2QmPxKH-");'
+                ></div>
+                <div>
+                  <p class="text-[#1b120e] text-base font-medium leading-normal">Artisan Soap Set</p>
+                  <p class="text-[#97674e] text-sm font-normal leading-normal">$18</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6Q3aBeCmykZTIL2ZoFE3cxJsMT5XuRPx1DP4Pti-SFvTEgcC4nhs8ZSIbFBtgALT1I_oNsvc4GKE4a1jL1bbt7jvOdG52SD3-5lGDiZEaufQANQJmRJ-6KYGYxXcEnewVg-hufDzU5TyeW_eXaEeNxCE1vR0UcqDzSPKN7VMP4-CL3cjsOHkwY9hUsXqxqy1Xm5SL6YDmp-U9eM-u5Lq5PYXPONUE9uI0HU4G4tfFNV5G-B-o3ivtwbusKW3lb8Q0g51TTR7gqdAX");'
+                ></div>
+                <div>
+                  <p class="text-[#1b120e] text-base font-medium leading-normal">Knitted Scarf</p>
+                  <p class="text-[#97674e] text-sm font-normal leading-normal">$35</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdC4RIyGzDz_WJj-kI5ulr_vJd8fdCu7ZZqAZ1UlUpoWLbm43YkzFgGI8zwJcoInGjrZ58IulA44qGreyiBvlT7I8MyJupy2jnlM3Ag5ev98PadmNpncM_FOsZd2TqGpzXRDtVbWGCszh_6J-OcU8WUuMyZjkLWYWmNyvtuWSrMyWwYd7ZCu87CS8-wB5O6NmgHN6G0SnERo0EKAfX3D5pAdFNcS-USvmYYr2hyDXot8SNJY7yRsEj2nDCYp-CeyFqGfCD8_OA4NT-");'
+                ></div>
+                <div>
+                  <p class="text-[#1b120e] text-base font-medium leading-normal">Wooden Coasters</p>
+                  <p class="text-[#97674e] text-sm font-normal leading-normal">$12</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTp8SQqTkEzMwm09rDSJdKRGfXJPGxLn8CjXjnWeJ2yuMySWVL_6byQR3Os-PszYo_UrffwVa1wRbuL1_7p0yB40ni0UYYKiDIeMG1qDIPsJNeuTSm-J1dYn9CI_Yd_eCEYAf4wRC_Y_c_Tnb_qOAPQ5UwbIDiutXqMjnu1Wey58b0wn16TFq3XmPmzg06QH0q9KZ1R0cPGBUq756-p6iz-_RQ5KWcG3zsgoZ8SxokurSW0fYpV1cD2UmCXO4Dgk75VV02L_QseXoc");'
+                ></div>
+                <div>
+                  <p class="text-[#1b120e] text-base font-medium leading-normal">Scented Candles</p>
+                  <p class="text-[#97674e] text-sm font-normal leading-normal">$20</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZ1nlgwiKu70M0rB-3bRmRJEtfRGJ41e36BxCLvNNcvBt6IoGPcexuE0_JeoOOw5WFm8_eb-2Asv9yjnTQZTWOxInz9PGddWeZuC9HF80rxjcRdWSfo7uoPSvIl4dF6qcknbMiaI7tltjHlw_XBxfZEsZY9W16tgqyrekuA-OSoXN_Fwmtya_vnUdJnPUk1B63KtxKeE1Su1BWsnPCalkqjJIYUCpb7I8x840UACSXFzPhRnySCITCDIW_G9TXDj1bxDx7D2S3DfQ9");'
+                ></div>
+                <div>
+                  <p class="text-[#1b120e] text-base font-medium leading-normal">Macrame Plant Hanger</p>
+                  <p class="text-[#97674e] text-sm font-normal leading-normal">$22</p>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>

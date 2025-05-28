@@ -1,0 +1,121 @@
+
+      <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <h2 class="text-[#0d141c] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Your Cart</h2>
+          <div *ngIf="cartItems.length === 0">
+            <h2>Your cart is empty. </h2>
+          </div>
+          <div class="flex gap-4 bg-slate-50 px-4 py-3" *ngFor="let item of cartItems">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
+              [style.background-image]="'url(' + item.imageUrl + ')'"
+            ></div>
+            <div class="flex flex-1 flex-col justify-center">
+              <p class="text-[#0d141c] text-base font-medium leading-normal">{{item.name}}</p>
+              <p class="text-[#49709c] text-sm font-normal leading-normal">Price: ${{item.price}}</p>
+              <p class="text-[#49709c] text-sm font-normal leading-normal pr-4">Quantity: {{item.quantity}}
+              <select 
+                  id="quantity-{{item.id}}"
+                  [(ngModel)]="item.quantity"
+                  (ngModelChange)="onQuantityChange(item.id, $event)"
+
+                  class="border rounded pl-4 px-2 py-1 w-14"
+                >
+                  <option *ngFor="let qty of quantities" [value]="qty.toString()">{{ qty }}</option>
+                </select>
+                <button  (click)="removeItem(item.id); $event.preventDefault()" title="Remove item" class="pl-4 fs-3" style="color: red; font-weight: bold; text-decoration:none; cursor:pointer;">
+                  &times;
+                </button>
+              </p>  
+              
+           
+             
+              
+            </div>
+          </div>
+          <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Total Price</h2>
+          <p class="text-[#0d141c] text-base font-normal leading-normal pb-3 pt-1 px-4">${{totalPrice()}}</p>
+          <!-- <div class="flex gap-4 bg-slate-50 px-4 py-3">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBbnWxst_mvLP-MB0jS_V1XgOj7TMsPhzioJsyruh1lfndMsRLDVGWs5l4DWf6wfMdWugyOUwRvls_hBv9FLLyrc8Fm3Nc4Gp4twkdVJxPbjTAS0aSVwzyVjxHrzBonDKASqo1t8YI_0pqQzchiNYbz9FpmZq5y2F2UHJqn4uQ6P6kvz0Pwr8nenkJfx_3GpdZ-qLbLfKjLC6Z0uZp1S2bb4zSt4IUOK85lnGyB21fRSjkBaY8Az-0pUptc0Qv3YYZh16tu-MpsiWL");'
+            ></div>
+            <div class="flex flex-1 flex-col justify-center">
+              <p class="text-[#0d141c] text-base font-medium leading-normal">Artisan Soap Set</p>
+              <p class="text-[#49709c] text-sm font-normal leading-normal">Price: $15</p>
+              <p class="text-[#49709c] text-sm font-normal leading-normal">Quantity: 2</p>
+            </div>
+          </div> -->
+          <!-- <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Customer Information</h2>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Name</p>
+              <input
+                placeholder="Enter your name"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedae8] bg-slate-50 focus:border-[#cedae8] h-14 placeholder:text-[#49709c] p-[15px] text-base font-normal leading-normal"
+                value=""
+              />
+            </label>
+          </div>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Contact Number</p>
+              <input
+                placeholder="Enter your contact number"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedae8] bg-slate-50 focus:border-[#cedae8] h-14 placeholder:text-[#49709c] p-[15px] text-base font-normal leading-normal"
+                value=""
+              />
+            </label>
+          </div>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Email Address</p>
+              <input
+                placeholder="Enter your email address"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedae8] bg-slate-50 focus:border-[#cedae8] h-14 placeholder:text-[#49709c] p-[15px] text-base font-normal leading-normal"
+                value=""
+              />
+            </label>
+          </div>
+          <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Shipping Address</h2>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Address</p>
+              <input
+                placeholder="Enter your address"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedae8] bg-slate-50 focus:border-[#cedae8] h-14 placeholder:text-[#49709c] p-[15px] text-base font-normal leading-normal"
+                value=""
+              />
+            </label>
+          </div>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">City</p>
+              <input
+                placeholder="Enter your city"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedae8] bg-slate-50 focus:border-[#cedae8] h-14 placeholder:text-[#49709c] p-[15px] text-base font-normal leading-normal"
+                value=""
+              />
+            </label>
+          </div>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Postal Code</p>
+              <input
+                placeholder="Enter your postal code"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border border-[#cedae8] bg-slate-50 focus:border-[#cedae8] h-14 placeholder:text-[#49709c] p-[15px] text-base font-normal leading-normal"
+                value=""
+              />
+            </label>
+          </div> -->
+         
+          <div class="flex px-4 py-3">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#0c77f2] text-slate-50 text-base font-bold leading-normal tracking-[0.015em]"
+              (click)="proceedToPayment()"
+              >
+              <span class="truncate">Proceed to Payment</span>
+            </button>
+          </div>
+        </div>
+      </div>
