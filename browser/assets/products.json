@@ -1,0 +1,89 @@
+[
+    {
+      "id": 1,
+      "name": "Mini Octo",
+      "price": 8,
+      "imageUrl": "assets/images/mini-octo.png"
+    },
+    {
+      "id": 2,
+      "name": "Mini Seal",
+      "price": 8,
+      "imageUrl": "assets/images/mini-seal.png"
+    },
+    {
+        "id": 3,
+        "name": "Mini Whale",
+        "price": 8,
+        "imageUrl": "assets/images/mini-whale.png"
+    },
+    {
+        "id": 4,
+        "name": "Frog",
+        "price": 10,
+        "imageUrl": "assets/images/frog.png"
+    },
+    {
+        "id": 5,
+        "name": "Mini Pickle",
+        "price": 10,
+        "imageUrl": "assets/images/mini-pickle.png"
+    },
+    {
+        "id": 6,
+        "name": "Mini Sting Ray",
+        "price": 10,
+        "imageUrl": "assets/images/mini-stingRay.png"
+    },
+    {
+        "id": 7,
+        "name": "Small Hen",
+        "price": 10,
+        "imageUrl": "assets/images/smallhen.png"
+    },
+    {
+        "id": 8,
+        "name": "Fidget Mushroom",
+        "price": 15,
+        "imageUrl": "assets/images/fidget-mushroom.png"
+    },
+    {
+        "id": 9,
+        "name": "Yellow Coasters (4 pack)",
+        "price": 15,
+        "imageUrl": "assets/images/yellow-coasters.png"
+    },
+    {
+        "id": 10,
+        "name": "Blue Coasters (4 pack)",
+        "price": 15,
+        "imageUrl": "assets/images/blue-coasters.png"
+    },
+    {
+        "id": 11,
+        "name": "Small Chick with accessories",
+        "price": 15,
+        "imageUrl": "assets/images/smallchick.png"
+    },
+    
+    {
+        "id": 12,
+        "name": "Flower Key Chain 3$ each",
+        "price": 3,
+        "imageUrl": "assets/images/flowerkeychain.png"
+    },
+    {
+        "id": 13,
+        "name": "Jelly Fish",
+        "price": 20,
+        "imageUrl": "assets/images/jelly-fish.png"
+    },
+    {
+        "id": 14,
+        "name": "12 inch Coaster",
+        "price": 20,
+        "imageUrl": "assets/images/12-inch-coaster.png"
+    }
+
+  ]
+  
