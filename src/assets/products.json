@@ -83,6 +83,12 @@
         "name": "12 inch Coaster",
         "price": 20,
         "imageUrl": "assets/images/12-inch-coaster.png"
+    },
+    {
+        "id":15,
+        "name":"Test",
+        "price": 20,
+        "imageUrl": "assets/images/IMG_3360.jpg"
     }
 
   ]
