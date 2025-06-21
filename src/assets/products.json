@@ -72,7 +72,7 @@
         "name": "Bee",
         "price": 10,
         "imageUrl": "assets/images/Bee.jpeg"
-    }
+    },
     {
         "id": 13,
         "name": "Loaf Kitty",
@@ -138,6 +138,6 @@
         "name": "12 inch Coaster",
         "price": 20,
         "imageUrl": "assets/images/12-inch-coaster.png"
-    },
+    }
   ]
   
