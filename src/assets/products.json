@@ -1,95 +1,143 @@
 [
+    
+    
     {
-      "id": 1,
-      "name": "Mini Octo",
-      "price": 8,
-      "imageUrl": "assets/images/mini-octo.png"
+        "id": 1,
+        "name": "Flower Key Chain 5$ each",
+        "price": 5,
+        "imageUrl": "assets/images/flowerkeychain.png"
     },
     {
       "id": 2,
-      "name": "Mini Seal",
-      "price": 8,
-      "imageUrl": "assets/images/mini-seal.png"
+      "name": "Mini Octo",
+      "price": 10,
+      "imageUrl": "assets/images/mini-octo.png"
     },
     {
-        "id": 3,
-        "name": "Mini Whale",
-        "price": 8,
-        "imageUrl": "assets/images/mini-whale.png"
+      "id": 3,
+      "name": "Pouch",
+      "price": 10,
+      "imageUrl": "assets/images/Pouch.jpeg"
     },
     {
         "id": 4,
-        "name": "Frog",
+        "name": "Mini Whale",
+        "price": 10,
+        "imageUrl": "assets/images/mini-whale.png"
+    },
+    {
+        "id": 5,
+        "name": "Leggy Frog",
         "price": 10,
         "imageUrl": "assets/images/frog.png"
     },
     {
-        "id": 5,
+        "id": 6,
         "name": "Mini Pickle",
         "price": 10,
         "imageUrl": "assets/images/mini-pickle.png"
     },
     {
-        "id": 6,
-        "name": "Mini Sting Ray",
+        "id": 7,
+        "name": "Mini Frog",
         "price": 10,
-        "imageUrl": "assets/images/mini-stingRay.png"
+        "imageUrl": "assets/images/Mini Frog.jpeg"
     },
     {
-        "id": 7,
+        "id": 8,
         "name": "Small Hen",
         "price": 10,
         "imageUrl": "assets/images/smallhen.png"
     },
     {
-        "id": 8,
+        "id": 9,
+        "name": "Chick",
+        "price": 10,
+        "imageUrl": "assets/images/Chick.jpeg"
+    },
+    {
+        "id": 10,
+        "name": "Turtle",
+        "price": 10,
+        "imageUrl": "assets/images/Turtle.jpeg"
+    },
+    {
+        "id": 11,
+        "name": "Jelly Fish",
+        "price": 10,
+        "imageUrl": "assets/images/jelly-fish.png"
+    },
+    {
+        "id": 12,
+        "name": "Bee",
+        "price": 10,
+        "imageUrl": "assets/images/Bee.jpeg"
+    }
+    {
+        "id": 13,
+        "name": "Loaf Kitty",
+        "price": 15,
+        "imageUrl": "assets/images/Loftcat.jpeg"
+    },
+    {
+        "id": 14,
+        "name": "Dino",
+        "price": 15,
+        "imageUrl": "assets/images/Dino.jpeg"
+    },
+    {
+        "id": 15,
+        "name": "Chick with accessories",
+        "price": 15,
+        "imageUrl": "assets/images/smallchick.png"
+    },
+    {
+        "id": 16,
+        "name": "Heart",
+        "price": 15,
+        "imageUrl": "assets/images/Heart.jpeg"
+    },
+    {
+        "id": 17,
+        "name": "Mini Sting Ray",
+        "price": 15,
+        "imageUrl": "assets/images/mini-stingRay.png"
+    },
+    {
+        "id": 18,
         "name": "Fidget Mushroom",
         "price": 15,
         "imageUrl": "assets/images/fidget-mushroom.png"
     },
     {
-        "id": 9,
+        "id": 19,
+        "name": "Big Chicken",
+        "price": 15,
+        "imageUrl": "assets/images/BigChicken.jpeg"
+    },
+    {
+       "id": 20,
+        "name":"Bunny",
+        "price": 15,
+        "imageUrl": "assets/images/Bunny.jpeg"
+    },
+    {
+        "id": 21,
         "name": "Yellow Coasters (4 pack)",
         "price": 15,
         "imageUrl": "assets/images/yellow-coasters.png"
     },
     {
-        "id": 10,
+        "id": 22,
         "name": "Blue Coasters (4 pack)",
         "price": 15,
         "imageUrl": "assets/images/blue-coasters.png"
     },
     {
-        "id": 11,
-        "name": "Small Chick with accessories",
-        "price": 15,
-        "imageUrl": "assets/images/smallchick.png"
-    },
-    
-    {
-        "id": 12,
-        "name": "Flower Key Chain 3$ each",
-        "price": 3,
-        "imageUrl": "assets/images/flowerkeychain.png"
-    },
-    {
-        "id": 13,
-        "name": "Jelly Fish",
-        "price": 20,
-        "imageUrl": "assets/images/jelly-fish.png"
-    },
-    {
-        "id": 14,
+        "id": 23,
         "name": "12 inch Coaster",
         "price": 20,
         "imageUrl": "assets/images/12-inch-coaster.png"
     },
-    {
-        "id":15,
-        "name":"Yuvi",
-        "price": 15,
-        "imageUrl": "assets/images/IMG_3360.jpg"
-    }
-
   ]
   
